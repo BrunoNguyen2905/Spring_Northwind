@@ -32,6 +32,10 @@ package fi.vamk.e1800945.northwind1.SalesReports;
             MediaType.APPLICATION_XML_VALUE }, method = RequestMethod.GET)
         public Optional<SalesReports> get(@PathVariable("id") final int id) {
             return repository.findById(id);
-        }  
+        }
+        // @RequestMapping(value ="/salesreports", method = RequestMethod.DELETE)
+        // public void delete (@RequestBody SalesReports item ){
+        //     repository.delete(item);
+        // }  
     }
 

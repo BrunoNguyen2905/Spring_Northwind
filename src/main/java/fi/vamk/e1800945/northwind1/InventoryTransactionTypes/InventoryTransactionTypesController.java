@@ -33,4 +33,9 @@ public class InventoryTransactionTypesController {
     public Optional<InventoryTransactionTypes> get(@PathVariable("id") final int id) {
         return repository.findById(id);
     }  
+
+    @RequestMapping(value ="/inventorytransactiontypes", method = RequestMethod.DELETE)
+    public void delete (@RequestBody InventoryTransactionTypes item ){
+        repository.delete(item);
+    } 
 }

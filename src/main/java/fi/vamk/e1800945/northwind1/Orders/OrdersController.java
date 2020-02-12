@@ -32,5 +32,10 @@ public class OrdersController {
         MediaType.APPLICATION_XML_VALUE }, method = RequestMethod.GET)
     public Optional<Orders> get(@PathVariable("id") final int id) {
         return repository.findById(id);
-    }  
+    } 
+    
+    @RequestMapping(value ="/orders", method = RequestMethod.DELETE)
+    public void delete (@RequestBody Orders item ){
+        repository.delete(item);
+    } 
 }

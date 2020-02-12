@@ -31,6 +31,11 @@ public class InventoryTransactionsController {
         MediaType.APPLICATION_XML_VALUE }, method = RequestMethod.GET)
     public Optional<InventoryTransactions> get(@PathVariable("id") final int id) {
         return repository.findById(id);
+    } 
+    
+    @RequestMapping(value ="/inventorytransactions", method = RequestMethod.DELETE)
+    public void delete (@RequestBody InventoryTransactions item ){
+        repository.delete(item);
     }  
 }
 

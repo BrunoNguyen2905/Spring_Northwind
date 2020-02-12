@@ -33,4 +33,10 @@ public class EmployeePrivilegesController {
     public Optional<EmployeePrivileges> get(@PathVariable("id") final int id) {
         return repository.findById(id);
     }  
+
+    @RequestMapping(value ="/employeeprivileges", method = RequestMethod.DELETE)
+    public void delete (@RequestBody EmployeePrivileges item ){
+        repository.delete(item);
+    }  
+
 }

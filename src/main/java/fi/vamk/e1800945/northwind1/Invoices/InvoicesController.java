@@ -33,4 +33,8 @@ public class InvoicesController {
     public Optional<Invoices> get(@PathVariable("id") final int id) {
         return repository.findById(id);
     }  
+    @RequestMapping(value ="/Invoices", method = RequestMethod.DELETE)
+    public void delete (@RequestBody Invoices item ){
+        repository.delete(item);
+    } 
 }

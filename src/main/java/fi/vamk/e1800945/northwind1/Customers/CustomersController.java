@@ -33,4 +33,9 @@ public class CustomersController {
     public Optional<Customers> get(@PathVariable("id") final int id) {
         return repository.findById(id);
     }  
+
+    @RequestMapping(value ="/customers", method = RequestMethod.DELETE)
+    public void delete (@RequestBody Customers item ){
+        repository.delete(item);
+    }  
 }

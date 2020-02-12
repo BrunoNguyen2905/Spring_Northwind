@@ -36,4 +36,9 @@ public class EmployeesController {
     public Optional<Employees> get(@PathVariable("id") final int id) {
         return repository.findById(id);
     }  
+    
+    @RequestMapping(value ="/employees", method = RequestMethod.DELETE)
+    public void delete (@RequestBody Employees item ){
+        repository.delete(item);
+    }  
 }
