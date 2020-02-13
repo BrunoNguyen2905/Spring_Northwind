@@ -33,5 +33,10 @@ public class PurchaseOrderStatusController {
     public Optional<PurchaseOrderStatus> get(@PathVariable("id") final int id) {
         return repository.findById(id);
     }  
+
+    @RequestMapping(value = "/purchaseorderStatus", method = RequestMethod.DELETE)
+	public void delete(@RequestBody PurchaseOrderStatus item) {
+		repository.delete(item);
+	}
 }
 

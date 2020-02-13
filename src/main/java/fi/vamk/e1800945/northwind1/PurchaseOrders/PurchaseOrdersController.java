@@ -32,5 +32,10 @@ public class PurchaseOrdersController {
         MediaType.APPLICATION_XML_VALUE }, method = RequestMethod.GET)
     public Optional<PurchaseOrders> get(@PathVariable("id") final int id) {
         return repository.findById(id);
-    }  
+    } 
+    
+    @RequestMapping(value = "/purchaseorders", method = RequestMethod.DELETE)
+	public void delete(@RequestBody PurchaseOrders item) {
+		repository.delete(item);
+	}
 }

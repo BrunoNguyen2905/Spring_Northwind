@@ -31,6 +31,12 @@ package fi.vamk.e1800945.northwind1.Suppliers;
             MediaType.APPLICATION_XML_VALUE }, method = RequestMethod.GET)
         public Optional<Suppliers> get(@PathVariable("id") final int id) {
             return repository.findById(id);
-        }  
+        }
+        @RequestMapping(value = "/suppliers", method = RequestMethod.DELETE)
+	    public void delete(@RequestBody Suppliers item) {
+		    repository.delete(item);
+	}
+
+        
     }
 
