@@ -33,5 +33,10 @@ public class ShippersController {
     public Optional<Shippers> get(@PathVariable("id") final int id) {
         return repository.findById(id);
     }  
+
+    @RequestMapping(value = "/shippers", method = RequestMethod.DELETE)
+	public void delete(@RequestBody Shippers item) {
+		repository.delete(item);
+	}
 }
 

@@ -32,6 +32,11 @@ public class StringsController {
         MediaType.APPLICATION_XML_VALUE }, method = RequestMethod.GET)
     public Optional<Strings> get(@PathVariable("id") final int id) {
         return repository.findById(id);
-    }  
+    }
+    
+    @RequestMapping(value = "/strings", method = RequestMethod.DELETE)
+	public void delete(@RequestBody Strings item) {
+		repository.delete(item);
+	}
 }
 
